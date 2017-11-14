@@ -2,8 +2,10 @@ void setup()
 {
   size(800, 600);
   loadData();
+  printProducts();
 }
 ArrayList<Product> products = new ArrayList<Product>();
+ArrayList<Product> bill = new ArrayList<Product>();
 
 void draw()
 {
@@ -17,5 +19,13 @@ void loadData()
   {
     Product p = new Product(row);
     products.add(p);
+  }
+}
+
+void printProducts()
+{
+  for(Product p:products)
+  {
+    println(p.toString());
   }
 }

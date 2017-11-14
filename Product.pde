@@ -7,4 +7,9 @@ class Product{
     this.name = row.getString("Name");
     this.price = row.getFloat("Price");
   }
+  
+  String toString()
+  {
+    return name + "\t €" + price;
+  }
 }
