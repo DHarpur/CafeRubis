@@ -1,3 +1,11 @@
+/*
+Name: Daniel O'Connor
+Student Number: C16776635
+Date: 14/11/2017
+Question: In today's lab test, you will be making a prototype till system for a new Dublin winebar called Cafe Rubis that's located on 9 Parliament St. 
+*/
+
+//Setup
 void setup()
 {
   size(800, 600);
@@ -7,20 +15,25 @@ void setup()
   stroke(0);
   textSize(32);
 }
+
+//Global Variables
 ArrayList<Product> products = new ArrayList<Product>();
 ArrayList<Product> bill = new ArrayList<Product>();
-String title = "Cafe Rubis Till System";
+
+//Draw function. Displays the UI for the till system.
 void draw()
 {
   textSize(32);
   fill(0);
+  String title = "Cafe Rubis Till System";
   text(title, width/3.5, 50);
   displayProducts();
   fill(0);
-  line(width/2, 75, width/2, height - 50); 
+  line(width/2, 75, width/2, height - 25); 
   displayBill();
 }
 
+//Loads the contents of a .csv file into an ArrayList of type Product
 void loadData()
 { 
   Table data = loadTable("cafe.csv", "header");
@@ -31,6 +44,7 @@ void loadData()
   }
 }
 
+//Prints the products for Error Handling purposes
 void printProducts()
 {
   for(Product p:products)
@@ -39,6 +53,8 @@ void printProducts()
   }
 }
 
+//Display Product Function
+//Displays each of the products in their own rectangle 
 void displayProducts()
 {
   float x = 25;
@@ -57,6 +73,8 @@ void displayProducts()
   }
 }
 
+//Mouse Pressed Function
+//If the user clicks on one of the products it will get added to the bill for the user
 void mousePressed()
 {
   float x = 25;
@@ -72,6 +90,8 @@ void mousePressed()
   }
 }
 
+//Display Bill Function
+//Calculates the Total for the bill. It displays every product on the bill that the user has selected followed by the bill.
 void displayBill()
 {
   float x = (width/2) + 25;
